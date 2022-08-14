@@ -67,3 +67,12 @@ class Operations:
         :return: hsv image as ndarray
         """
         return cv2.cvtColor(array.astype(np.float32), cv2.COLOR_RGB2HSV)
+
+    @staticmethod
+    def hsv_to_rgb(array):
+        """
+        Converts the image from hsv to rgb with OpenCV
+        :param array: input hsv image as ndarray
+        :return: rgb image as ndarray
+        """
+        return cv2.cvtColor(array.astype(np.float32), cv2.COLOR_HSV2RGB)
