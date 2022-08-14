@@ -27,7 +27,16 @@ class Operations:
     def rgb_to_bgr(array):
         """
         Converts the image from rgb to bgr with OpenCV.
-        :param array: input image as ndarray
+        :param array: input rgb image as ndarray
         :return: bgr image as ndarray
         """
         return cv2.cvtColor(array.astype(np.float32), cv2.COLOR_RGB2BGR)
+
+    @staticmethod
+    def bgr_to_rgb(array):
+        """
+        Converts the image from rgb to bgr with OpenCV.
+        :param array: input bgr image as ndarray
+        :return: rgb image as ndarray
+        """
+        return cv2.cvtColor(array.astype(np.float32), cv2.COLOR_BGR2RGB)
