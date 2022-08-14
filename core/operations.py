@@ -51,6 +51,15 @@ class Operations:
         return cv2.cvtColor(array.astype(np.float32), cv2.COLOR_BGR2HSV)
 
     @staticmethod
+    def hsv_to_bgr(array):
+        """
+        Converts the image from hsv to bgr with OpenCV
+        :param array: input hsv image as ndarray
+        :return: bgr image as ndarray
+        """
+        return cv2.cvtColor(array.astype(np.float32), cv2.COLOR_HSV2BGR)
+
+    @staticmethod
     def rgb_to_hsv(array):
         """
         Converts the image from rgb to hsv with OpenCV
