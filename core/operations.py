@@ -103,3 +103,12 @@ class Operations:
         :return: rgb image as ndarray
         """
         return cv2.cvtColor(array.astype(np.float32), cv2.COLOR_GRAY2RGB)
+
+    @staticmethod
+    def gray_to_bgr(array):
+        """
+        Converts the image from gray to bgr with OpenCV
+        :param array: input gray image as ndarray
+        :return: bgr image as ndarray
+        """
+        return cv2.cvtColor(array.astype(np.float32), cv2.COLOR_GRAY2BGR)
