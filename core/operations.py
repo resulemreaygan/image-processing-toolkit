@@ -11,7 +11,10 @@ import numpy as np
 
 class Operations:
     def __init__(self):
-        pass
+        self.array_info = None
+
+    def set_array_info(self, array):
+        self.array_info = np.iinfo(array)
 
     @staticmethod
     def transpose_array(array, order=(1, 2, 0)):
@@ -112,3 +115,15 @@ class Operations:
         :return: bgr image as ndarray
         """
         return cv2.cvtColor(array.astype(np.float32), cv2.COLOR_GRAY2BGR)
+
+    def calc_hist(self, array):
+        """
+        Calculates the histogram of the array
+        :param array: input image as ndarray
+        :return: hist and bins values
+        """
+        hist, bins = np.histogram(array.flatten(),
+                                  (self.array_info.max + 1),
+                                  [self.array_info.min, (self.array_info.max + 1)])
+
+        return hist, bins
